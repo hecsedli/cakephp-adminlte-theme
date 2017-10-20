@@ -1,15 +1,21 @@
 {
-  "name": "maiconpinto/cakephp-adminlte-theme",
-  "description": "CakePHP 3.x AdminLTE Theme.",
+  "name": "hecsedli/cakephp-adminlte-theme",
+  "description": "CakePHP 3.x AdminLTE Theme. Based on maiconpinto/cakephp-adminlte-theme",
   "type": "cakephp-plugin",
   "keywords": ["cakephp", "templates", "plugin"],
-  "homepage": "https://github.com/maiconpinto/cakephp-adminlte-theme",
+  "homepage": "https://github.com/hecsedli/cakephp-adminlte-theme",
   "license": "MIT",
   "authors": [
     {
       "name": "Maicon Pinto",
       "email": "maiconsilva.pinto@gmail.com",
       "homepage": "https://www.maiconpinto.com.br/",
+      "role": "Author"
+    },
+    {
+      "name": "Csipke Ferenc",
+      "email": "csipke.ferenc@gmail.com",
+      "homepage": "",
       "role": "Author"
     }
   ],
@@ -22,7 +28,7 @@
   },
   "autoload": {
     "psr-4": {
-      "AdminLTE\\": "src"
+      "hecsedli\\AdminLTE\\": "src"
     }
   },
   "support": {
