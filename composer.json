@@ -1,5 +1,5 @@
 {
-  "name": "hecsedli/cakephp-adminlte-theme",
+  "name": "hecsedli/cakephp3adminlte",
   "description": "CakePHP 3.x AdminLTE Theme. Based on maiconpinto/cakephp-adminlte-theme",
   "type": "cakephp-plugin",
   "keywords": ["cakephp", "templates", "plugin"],
@@ -30,10 +30,6 @@
     "psr-4": {
       "hecsedli\\AdminLTE\\": "src"
     }
-  },
-  "support": {
-    "issues": "https://github.com/maiconpinto/cakephp-adminlte-theme/issues",
-    "source": "https://github.com/maiconpinto/cakephp-adminlte-theme"
   }
 }
 
