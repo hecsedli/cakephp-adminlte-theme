@@ -1,27 +1,12 @@
-<?php
-$this->Html->css([
-    'AdminLTE./plugins/datepicker/datepicker3',
-  ],
-  ['block' => 'css']);
 
-$this->Html->script([
-  'AdminLTE./plugins/input-mask/jquery.inputmask',
-  'AdminLTE./plugins/input-mask/jquery.inputmask.date.extensions',
-  'AdminLTE./plugins/datepicker/bootstrap-datepicker',
-  'AdminLTE./plugins/datepicker/locales/bootstrap-datepicker.pt-BR',
-],
-['block' => 'script']);
-?>
-<?php $this->start('scriptBottom'); ?>
 <script>
   $(function () {
     //Datemask mm/dd/yyyy
     $(".datepicker")
-        .inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"})
+        .inputmask("yyyy-mm-dd", {"placeholder": "yyyy-mm-dd"})
         .datepicker({
             language:'en',
-            format: 'mm/dd/yyyy'
+            format: 'yyyy-mm-dd'
         });
   });
 </script>
-<?php $this->end(); ?>
