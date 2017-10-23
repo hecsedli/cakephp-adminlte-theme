@@ -56,6 +56,7 @@ Use after bake. Generate a sidebar menu from database table names.
 bin/cake menu_generator
 ```
 
+### Elements
 
 ![Dashboard](docs/dashboard.png)
 
