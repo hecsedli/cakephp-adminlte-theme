@@ -55,6 +55,26 @@ Added link to default page of CakePHP.
 
 ![Page debug](docs/page-debug.png)
 
+### Bake
+
+```
+bin/cake bake model all -t AdminLTE
+
+bin/cake bake controller all -t AdminLTE --actions index,indexAjax,add,edit,delete
+
+bin/cake bake template all -t AdminLTE
+
+```
+
+### Menu generator
+
+Use after bake. Generate a sidebar menu from database table names.
+
+```
+bin/cake menu_generator
+```
+
+
 ## Contributing
 
 1. Fork it
