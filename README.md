@@ -37,24 +37,6 @@ public function initialize()
     $this->loadHelper('Form', ['className' => 'AdminLTE.Form']);
 }
 ```
-
-![Dashboard](docs/dashboard.png)
-
-1. `src/Template/Plugin/AdminLTE/Element/nav-top.ctp`
-2. `src/Template/Plugin/AdminLTE/Element/aside-main-sidebar.ctp`
-3. `src/Template/Plugin/AdminLTE/Element/aside/user-panel.ctp`
-4. `src/Template/Plugin/AdminLTE/Element/aside/form.ctp`
-5. `src/Template/Plugin/AdminLTE/Element/aside/sidebar-menu.ctp`
-6. `src/Template/Plugin/AdminLTE/Element/aside-control-sidebar.ctp`
-7. `src/Template/Plugin/AdminLTE/Element/footer.ctp`
-
-
-### Page debug
-
-Added link to default page of CakePHP.
-
-![Page debug](docs/page-debug.png)
-
 ### Bake
 
 ```
@@ -73,6 +55,24 @@ Use after bake. Generate a sidebar menu from database table names.
 ```
 bin/cake menu_generator
 ```
+
+
+![Dashboard](docs/dashboard.png)
+
+1. `src/Template/Plugin/AdminLTE/Element/nav-top.ctp`
+2. `src/Template/Plugin/AdminLTE/Element/aside-main-sidebar.ctp`
+3. `src/Template/Plugin/AdminLTE/Element/aside/user-panel.ctp`
+4. `src/Template/Plugin/AdminLTE/Element/aside/form.ctp`
+5. `src/Template/Plugin/AdminLTE/Element/aside/sidebar-menu.ctp`
+6. `src/Template/Plugin/AdminLTE/Element/aside-control-sidebar.ctp`
+7. `src/Template/Plugin/AdminLTE/Element/footer.ctp`
+
+
+### Page debug
+
+Added link to default page of CakePHP.
+
+![Page debug](docs/page-debug.png)
 
 
 ## Contributing
