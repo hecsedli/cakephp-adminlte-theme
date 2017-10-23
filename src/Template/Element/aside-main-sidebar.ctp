@@ -1,7 +1,11 @@
 <?php
 use Cake\Core\Configure;
+use Cake\Utility\Inflector;
 
-$file = Configure::read('Theme.folder') . DS . 'src' . DS . 'Template' . DS . 'Element' . DS . 'aside-main-sidebar.ctp';
+$prefix = '';
+if(isset($this->request->params['prefix'])) $prefix = DS . Inflector::camelize($this->request->params['prefix']);
+
+$file = Configure::read('Theme.folder') . DS . 'src' . DS . 'Template' . $prefix . DS . 'Element' . DS . 'aside-main-sidebar.ctp';
 
 if (file_exists($file)) {
     ob_start();
