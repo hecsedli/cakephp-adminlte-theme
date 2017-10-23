@@ -1,0 +1,8 @@
+.mailbox-attachment-holder {
+	border: 1px solid #eee;
+	margin-bottom: 10px;
+}
+.mailbox-attachment-icon {
+	height: 130px;
+	overflow: hidden;
+}
