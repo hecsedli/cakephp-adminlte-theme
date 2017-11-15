@@ -100,5 +100,18 @@ if (!in_array($field, ['created', 'modified', 'updated'])) :%>
   			});
 		
 		});
+		$('.pagination a, th a').click(function(e){
+			e.preventDefault();
+			var url = $(this).attr("href");
+			$('.overlay').show();
+			$.ajax({
+				url: url,
+				cache: false
+			})
+			.done(function( html ) {
+				$('#<%= $singularVar %>-2').html( html );
+				$('.overlay').hide();
+  			});
+		});
 	});
 </script>

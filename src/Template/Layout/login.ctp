@@ -1,4 +1,18 @@
-<?php use Cake\Core\Configure; ?>
+<?php
+use Cake\Core\Configure;
+use Cake\Utility\Inflector;
+
+$prefix = '';
+if(isset($this->request->params['prefix'])) $prefix = DS . Inflector::camelize($this->request->params['prefix']);
+
+$file = Configure::read('Theme.folder') . DS . 'src' . DS . 'Template' . $prefix . DS . 'Layout' . DS . 'login.ctp';
+
+if (file_exists($file)) {
+    ob_start();
+    include_once $file;
+    echo ob_get_clean();
+} else {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,3 +99,4 @@
 </script>
 </body>
 </html>
+<?php } ?>
