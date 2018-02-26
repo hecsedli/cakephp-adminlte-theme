@@ -27,8 +27,10 @@
             'contain' => [<%= $this->Bake->stringifyList($belongsTo, ['indent' => false]) %>]
         ];
 <% endif; %>
+		$<%= $pluralName %>_search = $this-><%= $currentModelName %>->newEntity();
+		
         $<%= $pluralName %> = $this->paginate($this-><%= $currentModelName %>);
 
-        $this->set(compact('<%= $pluralName %>'));
+        $this->set(compact('<%= $pluralName %>', '<%= $pluralName %>_search'));
         $this->set('_serialize', ['<%= $pluralName %>']);
     }
