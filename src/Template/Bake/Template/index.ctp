@@ -1,5 +1,6 @@
 <%
 $datepicker = false;
+$datetimepicker = false;
 $select2 = false;
 
  $fields = collection($fields)
@@ -12,6 +13,7 @@ foreach ($fields as $field) {
 	if (!in_array($field, ['created', 'modified', 'updated'])) {
 		$fieldData = $schema->column($field);
         if (($fieldData['type'] === 'date')) $datepicker = true;
+        if (($fieldData['type'] === 'datetime')) $datetimepicker = true;
 	}
 	
 	if (isset($keyFields[$field])) {
@@ -49,6 +51,20 @@ foreach ($fields as $field) {
 </section>
 
 <%
+if($datepicker === true || $datetimepicker === true):
+%>
+<?php
+$this->Html->script([
+  'AdminLTE./plugins/input-mask/jquery.inputmask.bundle.min.js',
+],
+['block' => 'script']);
+?>
+
+<%
+endif;
+%>
+
+<%
 if($datepicker === true):
 %>
 <?php
@@ -58,10 +74,27 @@ $this->Html->css([
   ['block' => 'css']);
 
 $this->Html->script([
-  'AdminLTE./plugins/input-mask/jquery.inputmask',
-  'AdminLTE./plugins/input-mask/jquery.inputmask.date.extensions',
   'AdminLTE./plugins/datepicker/bootstrap-datepicker',
   'AdminLTE./plugins/datepicker/locales/bootstrap-datepicker.pt-BR',
+],
+['block' => 'script']);
+?>
+<%
+endif;
+%>
+
+<%
+if($datetimepicker === true):
+%>
+<?php
+$this->Html->css([
+    'AdminLTE./plugins/datetimepicker/bootstrap-datetimepicker.min',
+  ],
+  ['block' => 'css']);
+
+$this->Html->script([
+  'AdminLTE./plugins/datetimepicker/moment-with-locales.min.js',
+  'AdminLTE./plugins/datetimepicker/bootstrap-datetimepicker.min',
 ],
 ['block' => 'script']);
 ?>

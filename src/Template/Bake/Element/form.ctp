@@ -54,6 +54,11 @@ foreach ($fields as $field) {
 %>
             echo $this->Form->input('<%= $field %>', ['empty' => true, 'default' => '', 'class' => 'datepicker form-control', 'type' => 'text', 'templates' => ['input' => ' <div class="input-group date"><div class="input-group-addon"><i class="fa fa-calendar"></i></div><input type="{{type}}" name="{{name}}"{{attrs}}/></div>']]);
 <%
+        } else if (($fieldData['type'] === 'datetime')) {
+            $extras['datepicker'] = 'datetimepicker';
+%>
+            echo $this->Form->input('<%= $field %>', ['empty' => true, 'default' => '', 'class' => 'datetimepicker form-control', 'type' => 'text', 'templates' => ['input' => ' <div class="input-group date"><div class="input-group-addon"><i class="fa fa-calendar"></i></div><input type="{{type}}" name="{{name}}"{{attrs}}/></div>']]);
+<%
         } else if(strpos($field, 'image') !== false || strpos($field, 'file') !== false){
 	        $extras['file'] = 'file';
 %>
