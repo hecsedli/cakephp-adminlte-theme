@@ -3,7 +3,7 @@ use Cake\Core\Configure;
 use Cake\Utility\Inflector;
 
 $prefix = '';
-if(isset($this->request->params['prefix'])) $prefix = DS . Inflector::camelize($this->request->params['prefix']);
+if($this->request->getParam('prefix')) $prefix = DS . Inflector::camelize($this->request->getParam('prefix'));
 
 $file = Configure::read('Theme.folder') . DS . 'src' . DS . 'Template' . $prefix . DS . 'Element' . DS . 'nav-top.ctp';
 
