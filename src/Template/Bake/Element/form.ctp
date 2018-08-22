@@ -38,11 +38,11 @@ foreach ($fields as $field) {
         $extras['select2'] = 'select2';
         if (!empty($fieldData['null'])) {
 %>
-            echo $this->Form->input('<%= $field %>', ['class' => 'form-control select2', 'options' => $<%= $keyFields[$field] %>, 'empty' => true]);
+            echo $this->Form->control('<%= $field %>', ['class' => 'form-control select2', 'options' => $<%= $keyFields[$field] %>, 'empty' => true]);
 <%
         } else {
 %>
-            echo $this->Form->input('<%= $field %>', ['class' => 'form-control select2', 'options' => $<%= $keyFields[$field] %>]);
+            echo $this->Form->control('<%= $field %>', ['class' => 'form-control select2', 'options' => $<%= $keyFields[$field] %>]);
 <%
         }
         continue;
@@ -52,19 +52,19 @@ foreach ($fields as $field) {
         if (($fieldData['type'] === 'date')) {
             $extras['datepicker'] = 'datepicker';
 %>
-            echo $this->Form->input('<%= $field %>', ['empty' => true, 'default' => '', 'class' => 'datepicker form-control', 'type' => 'text', 'templates' => ['input' => ' <div class="input-group date"><div class="input-group-addon"><i class="fa fa-calendar"></i></div><input type="{{type}}" name="{{name}}"{{attrs}}/></div>']]);
+            echo $this->Form->control('<%= $field %>', ['empty' => true, 'default' => '', 'class' => 'datepicker form-control', 'type' => 'text', 'templates' => ['input' => ' <div class="input-group date"><div class="input-group-addon"><i class="fa fa-calendar"></i></div><input type="{{type}}" name="{{name}}"{{attrs}}/></div>']]);
 <%
         } else if (($fieldData['type'] === 'datetime')) {
             $extras['datepicker'] = 'datetimepicker';
 %>
-            echo $this->Form->input('<%= $field %>', ['empty' => true, 'default' => '', 'class' => 'datetimepicker form-control', 'type' => 'text', 'templates' => ['input' => ' <div class="input-group date"><div class="input-group-addon"><i class="fa fa-calendar"></i></div><input type="{{type}}" name="{{name}}"{{attrs}}/></div>']]);
+            echo $this->Form->control('<%= $field %>', ['empty' => true, 'default' => '', 'class' => 'datetimepicker form-control', 'type' => 'text', 'templates' => ['input' => ' <div class="input-group date"><div class="input-group-addon"><i class="fa fa-calendar"></i></div><input type="{{type}}" name="{{name}}"{{attrs}}/></div>']]);
 <%
         } else if(strpos($field, 'image') !== false || strpos($field, 'file') !== false){
 	        $extras['file'] = 'file';
 %>
             
             
-            echo $this->Form->input('<%= $field %>', [
+            echo $this->Form->control('<%= $field %>', [
             	'type' => 'file', 
             	'style' => 'display:none',
             	'nestedInput' => true,
@@ -84,7 +84,7 @@ foreach ($fields as $field) {
 <%
 	    } else {
 %>
-            echo $this->Form->input('<%= $field %>');
+            echo $this->Form->control('<%= $field %>');
 <%
         }
       }
@@ -92,7 +92,7 @@ foreach ($fields as $field) {
     if (!empty($associations['BelongsToMany'])) {
       foreach ($associations['BelongsToMany'] as $assocName => $assocData) {
 %>
-            echo $this->Form->input('<%= $assocData['property'] %>._ids', ['options' => $<%= $assocData['variable'] %>]);
+            echo $this->Form->control('<%= $assocData['property'] %>._ids', ['options' => $<%= $assocData['variable'] %>]);
 <%
       }
     }

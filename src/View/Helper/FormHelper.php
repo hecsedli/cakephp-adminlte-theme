@@ -68,7 +68,7 @@ class FormHelper extends CakeFormHelper {
         return parent::submit($caption, $options);
     }
 
-    public function input($fieldName, array $options = [])
+    public function control($fieldName, array $options = [])
     {
 
         $_options = [];
@@ -90,6 +90,6 @@ class FormHelper extends CakeFormHelper {
 
         $options += $_options;
 
-        return parent::input($fieldName, $options);
+        return parent::control($fieldName, $options);
     }
 }

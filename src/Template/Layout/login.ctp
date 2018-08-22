@@ -3,7 +3,7 @@ use Cake\Core\Configure;
 use Cake\Utility\Inflector;
 
 $prefix = '';
-if(isset($this->request->params['prefix'])) $prefix = DS . Inflector::camelize($this->request->params['prefix']);
+if($this->request->getParam('prefix')) $prefix = DS . Inflector::camelize($this->request->getParam('prefix'));
 
 $file = Configure::read('Theme.folder') . DS . 'src' . DS . 'Template' . $prefix . DS . 'Layout' . DS . 'login.ctp';
 
@@ -24,7 +24,7 @@ if (file_exists($file)) {
   <!-- Bootstrap 3.3.5 -->
   <?php echo $this->Html->css('AdminLTE./bootstrap/css/bootstrap.min'); ?>
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
