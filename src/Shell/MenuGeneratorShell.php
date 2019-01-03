@@ -52,7 +52,7 @@ class MenuGeneratorShell extends Shell {
 		$menuHtml = '<ul class="sidebar-menu" data-widget="tree">
 	<li class="header"><?php echo __(\'MAIN NAVIGATION\');?></li>
 	<li>
-    	<a href="<?php echo $this->Url->build([\'controller\' => \'Pages\', \'action\' => \'home\']); ?>">
+    	<a href="<?php echo $this->Url->build([\'controller\' => \'Pages\', \'action\' => \'dashboard\']); ?>">
         	<i class="fa fa-dashboard"></i> <span>Dashboard</span>
 		</a>
 	</li>';

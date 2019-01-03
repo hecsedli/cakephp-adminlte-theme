@@ -31,7 +31,7 @@ foreach ($fields as $field) {
 <section class="content-header">
 	<h1><?php echo __('<%= $pluralHumanName %>') ?></h1>
   	<ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i><?php echo __('Home') ?></a></li>
+        <li><a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'dashboard']); ?>"><i class="fa fa-dashboard"></i><?php echo __('Dashboard') ?></a></li>
         <li class="active"><?php echo __('<%= $pluralHumanName %>') ?></li>
     </ol>
 </section>
