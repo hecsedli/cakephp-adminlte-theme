@@ -6,6 +6,6 @@
         .datetimepicker({
             locale:'en',
             format: 'YYYY-MM-DD HH:mm'
-        });
+        }).blur();
   });
 </script>
