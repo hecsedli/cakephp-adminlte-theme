@@ -38,7 +38,7 @@ $compact = ["'" . $singularName . "'"];
             $this->Bake->aliasExtractor($modelObj, 'BelongsToMany')
         );
         foreach ($associations as $assoc):
-            $association = $modelObj->association($assoc);
+            $association = $modelObj->getAssociation($assoc);
             $otherName = $association->getTarget()->getAlias();
             $otherPlural = $this->_variableName($otherName);
 %>

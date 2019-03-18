@@ -5,13 +5,13 @@ $select2 = false;
 
  $fields = collection($fields)
     ->filter(function($field) use ($schema) {
-        return $schema->columnType($field) !== 'binary';
+        return $schema->getColumnType($field) !== 'binary';
     });
     
    
 foreach ($fields as $field) {
 	if (!in_array($field, ['created', 'modified', 'updated'])) {
-		$fieldData = $schema->column($field);
+		$fieldData = $schema->getColumn($field);
         if (($fieldData['type'] === 'date')) $datepicker = true;
         if (($fieldData['type'] === 'datetime')) $datetimepicker = true;
 	}

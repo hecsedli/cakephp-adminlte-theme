@@ -44,7 +44,7 @@ class MenuGeneratorShell extends Shell {
 	    }
 
 		// Create a schema collection.
-		$collection = $db->schemaCollection();
+		$collection = $db->getSchemaCollection();
 
 		// Get the table names
 		$tables = $collection->listTables();
@@ -53,7 +53,7 @@ class MenuGeneratorShell extends Shell {
 	<li class="header"><?php echo __(\'MAIN NAVIGATION\');?></li>
 	<li>
     	<a href="<?php echo $this->Url->build([\'controller\' => \'Pages\', \'action\' => \'dashboard\']); ?>">
-        	<i class="fa fa-dashboard"></i> <span>Dashboard</span>
+        	<i class="fa fa-dashboard"></i> <span><?php echo __(\'Dashboard\');?></span>
 		</a>
 	</li>';
 	
@@ -68,7 +68,7 @@ class MenuGeneratorShell extends Shell {
 			$menuHtml .= '
 	<li>
     	<a href="<?php echo $this->Url->build([\'controller\' => \'' . Inflector::camelize($table) . '\', \'action\' => \'index\']); ?>">
-        	<i class="fa fa-table"></i> <span>'. Inflector::camelize($table) . '</span>
+        	<i class="fa fa-table"></i> <span><?php echo __(\''. Inflector::camelize($table) . '\');?></span>
 		</a>
 	</li>';
 			

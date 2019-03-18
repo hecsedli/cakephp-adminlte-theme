@@ -41,7 +41,7 @@ $compact = ["'" . $singularName . "'"];
         }
 <%
         foreach (array_merge($belongsTo, $belongsToMany) as $assoc):
-            $association = $modelObj->association($assoc);
+            $association = $modelObj->getAssociation($assoc);
             $otherName = $association->getTarget()->getAlias();
             $otherPlural = $this->_variableName($otherName);
 %>

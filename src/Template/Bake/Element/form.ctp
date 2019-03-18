@@ -5,7 +5,7 @@ use Cake\Utility\Inflector;
    
    $fields = collection($fields)
     ->filter(function($field) use ($schema) {
-        return $schema->columnType($field) !== 'binary';
+        return $schema->getColumnType($field) !== 'binary';
     });
 
 if (isset($modelObject) && $modelObject->hasBehavior('Tree')) {
@@ -34,7 +34,7 @@ foreach ($fields as $field) {
         continue;
       }
       if (isset($keyFields[$field])) {
-        $fieldData = $schema->column($field);
+        $fieldData = $schema->getColumn($field);
         $extras['select2'] = 'select2';
         if (!empty($fieldData['null'])) {
 %>
@@ -48,7 +48,7 @@ foreach ($fields as $field) {
         continue;
       }
       if (!in_array($field, ['created', 'modified', 'updated'])) {
-        $fieldData = $schema->column($field);
+        $fieldData = $schema->getColumn($field);
         if (($fieldData['type'] === 'date')) {
             $extras['datepicker'] = 'datepicker';
 %>
