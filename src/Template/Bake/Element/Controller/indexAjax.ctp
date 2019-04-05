@@ -27,10 +27,26 @@
             'contain' => [<%= $this->Bake->stringifyList($belongsTo, ['indent' => false]) %>]
         ];
 <% endif; %>
-		$<%= $pluralName %>_search = $this-><%= $currentModelName %>->newEntity();
+		$filter = new FilterForm();
+		$session = $this->getRequest()->getSession();
+		$conditions = [];
 		
-        $<%= $pluralName %> = $this->paginate($this-><%= $currentModelName %>);
+		if ($this->request->is(['patch', 'post', 'put'])) {
+	    	 $data = $this->request->getData();
+			 $session->write("<%= $currentModelName %>Search.data", $this->request->getData());
+	    } else if($session->check("<%= $currentModelName %>Search.data")) {
+		    $data = $session->read("<%= $currentModelName %>Search.data");
+			
+	    }
+	    
+	    if (!empty($data['search'])) {
+		    
+		}
+		
+		$query = $this-><%= $currentModelName %>->find()->where($conditions);
+		
+		$<%= $pluralName %> = $this->paginate($query);
 
-        $this->set(compact('<%= $pluralName %>', '<%= $pluralName %>_search'));
+        $this->set(compact('<%= $pluralName %>', 'filter'));
         $this->set('_serialize', ['<%= $pluralName %>']);
     }

@@ -9,9 +9,9 @@ $fields = collection($fields)
 %>
 <div class="box box-primary">
     <div class="box-header">
-        <h3 class="box-title"><?= __('List of') ?> <%= $pluralHumanName %></h3>
+        <h3 class="box-title"><?= __('List of <%= $pluralHumanName %>') ?></h3>
         	<div class="box-tools">
-	        	<?php echo $this->Form->create($<%= $pluralVar %>_search, ['id' => '<%= $pluralVar %>SearchForm']); ?>
+	        	<?php echo $this->Form->create($filter, ['id' => '<%= $pluralVar %>SearchForm']); ?>
 					<div class="input-group input-group-sm"  style="width: 180px;">
 						<?php echo $this->Form->text('search', ['class' => 'form-control', 'placeholder' => __('Fill in to start search')]); ?>
 						<span class="input-group-btn">
